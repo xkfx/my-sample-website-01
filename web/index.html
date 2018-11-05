@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="{CHARSET}">
+  <title>form.html</title>
+</head>
+<body>
+<!--在html看来，SelectBeer.do就是要调用的servlet-->
+<h1 align="center">Beer Selection Page</h1>
+<form method="post" action="SelectBeer.do">
+  <p>select beer characteristics</p>
+  Color:
+  <select name="color" size="1">
+    <option>light</option>
+    <option>amber</option>
+    <option>brown</option>
+    <option>dark</option>
+  </select>
+  <br />
+  <input type="submit" />
+</form>
+</body>
+</html>
