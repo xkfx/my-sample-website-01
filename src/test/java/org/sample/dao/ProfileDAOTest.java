@@ -3,7 +3,7 @@ package org.sample.dao;
 import org.junit.Test;
 import org.sample.dao.impl.ProfileDAOImpl;
 import org.sample.entity.Profile;
-import org.sample.manager.LocalConnectionProxy;
+import org.sample.manager.ConnectionProxy;
 
 import java.util.List;
 
@@ -31,8 +31,7 @@ public class ProfileDAOTest {
         Profile profile = RandomProfile();
         int i = PROFILE_DAO.saveProfile(profile);
         int j = PROFILE_DAO.saveProfile(profile);
-        LocalConnectionProxy.close();
-
+        ConnectionProxy.close();
 
         assertEquals(1, i);
         assertEquals(0, j);
@@ -47,8 +46,8 @@ public class ProfileDAOTest {
         PROFILE_DAO.saveProfile(profile1);
         PROFILE_DAO.saveProfile(profile2);
         PROFILE_DAO.saveProfile(profile3);
-        List result = PROFILE_DAO.listProfileByNickname(nickName);
-        LocalConnectionProxy.close();
+        List result = PROFILE_DAO.listByNickname(nickName);
+        ConnectionProxy.close();
 
         assertEquals(3, result.size());
     }
@@ -57,8 +56,8 @@ public class ProfileDAOTest {
     public void getProfileByUsername() throws Exception {
         Profile profile = RandomProfile();
         PROFILE_DAO.saveProfile(profile);
-        Profile result = PROFILE_DAO.getProfileByUsername(profile.getUsername());
-        LocalConnectionProxy.close();
+        Profile result = PROFILE_DAO.getByUsername(profile.getUsername());
+        ConnectionProxy.close();
 
         assertNotNull(result);
     }
@@ -67,10 +66,9 @@ public class ProfileDAOTest {
     public void updateProfileById() throws Exception {
         Profile profile = RandomProfile();
         PROFILE_DAO.saveProfile(profile);
-        Profile temp = PROFILE_DAO.getProfileByUsername(profile.getUsername());
-        int i = PROFILE_DAO.updateProfileById(temp);
-
-        LocalConnectionProxy.close();
+        Profile temp = PROFILE_DAO.getByUsername(profile.getUsername());
+        int i = PROFILE_DAO.updateById(temp);
+        ConnectionProxy.close();
 
         assertEquals(1, i);
     }
@@ -80,7 +78,7 @@ public class ProfileDAOTest {
         Profile profile = RandomProfile();
         PROFILE_DAO.saveProfile(profile);
         int i = PROFILE_DAO.updatePassword(profile.getUsername(), RandomString());
-        LocalConnectionProxy.close();
+        ConnectionProxy.close();
 
         assertEquals(1, i);
     }
@@ -90,7 +88,7 @@ public class ProfileDAOTest {
         Profile profile = RandomProfile();
         PROFILE_DAO.saveProfile(profile);
         int i = PROFILE_DAO.updateLastOnline(profile.getUsername());
-        LocalConnectionProxy.close();
+        ConnectionProxy.close();
 
         assertEquals(1, i);
     }

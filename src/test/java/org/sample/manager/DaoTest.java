@@ -40,14 +40,14 @@ public class DaoTest {
         public void run() {
             LOGGER.info(Thread.currentThread().getName() + " has started his work");
             try {
-                LocalConnectionProxy.setAutoCommit(false);
+                // ConnectionProxy.setAutoCommit(false);
                 PROFILE_DAO.saveProfile(profile);
-                LocalConnectionProxy.commit();
+                // ConnectionProxy.commit();
             } catch (DaoException e) {
                 e.printStackTrace();
             } finally {
                 try {
-                    LocalConnectionProxy.close();
+                    ConnectionProxy.close();
                 } catch (DaoException e) {
                     e.printStackTrace();
                 }
@@ -56,12 +56,20 @@ public class DaoTest {
         }
     }
 
-    private static final int numTasks = 102;
+    /**
+     * numTasks指并发线程数。
+     * -- 不用连接池：
+     * numTasks<=100正常运行，完成100个任务耗时大概是550ms~600ms
+     * numTasks>100报错“too many connections”，偶尔不报错，这是来自mysql数据库本身的限制
+     * -- 采用连接池
+     * numTasks>10000仍正常运行，完成10000个任务耗时大概是26s（池大小是10）
+     */
+    private static final int NUM_TASKS = 2000;
 
     @Test
     public void test() throws Exception {
         List<Runnable> workers = new LinkedList<>();
-        for(int i = 0; i != numTasks; ++i) {
+        for(int i = 0; i != NUM_TASKS; ++i) {
             workers.add(new Worker());
         }
         assertConcurrent("Dao test ", workers, Integer.MAX_VALUE);

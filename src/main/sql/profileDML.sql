@@ -7,12 +7,12 @@ WHERE `username`='123';
 INSERT ignore INTO `profiles`.`profile` (`username`, `password`, `nickname`)
 VALUES ('1234', '123', '123');
 
--- 查看某人的信息：listProfileByNickname
+-- 查看某人的信息：listByNickname
 SELECT  `profileId`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`
 FROM `profiles`.`profile`
 WHERE `nickname`='123';
 
--- 修改个人信息：updateProfileById
+-- 修改个人信息：updateById
 UPDATE `profiles`.`profile`
 SET `nickname`='12345', `gender`='bb'
 WHERE  `username`='123';

@@ -3,6 +3,7 @@ package org.sample.entity;
 import java.sql.Timestamp;
 
 public class Profile {
+
     private Long profileId;
     private String username;
     private String password;

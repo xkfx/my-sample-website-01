@@ -6,7 +6,7 @@ import org.sample.dto.OnesProfileResult;
 import org.sample.dto.Validation;
 import org.sample.entity.Profile;
 import org.sample.enums.OnesProfileEnum;
-import org.sample.manager.LocalConnectionProxy;
+import org.sample.manager.ConnectionProxy;
 import org.sample.service.ProfileService;
 import org.sample.util.FormatValidator;
 
@@ -33,7 +33,7 @@ public class ProfileServiceImpl implements ProfileService {
         Profile profile = new Profile(username, password, nickname);
         try {
             int i = profileDAO.saveProfile(profile);
-            LocalConnectionProxy.close();
+            ConnectionProxy.close();
             if (i == 0) {
                 return new OnesProfileResult(false, OnesProfileEnum.PROFILE_EXISTED);
             } else {

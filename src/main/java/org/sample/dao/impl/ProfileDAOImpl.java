@@ -1,7 +1,7 @@
 package org.sample.dao.impl;
 
 import org.sample.dao.ProfileDAO;
-import org.sample.db.LocalConnectionFactory;
+import org.sample.db.ConnectionFactory;
 import org.sample.entity.Profile;
 import org.sample.exception.DaoException;
 import org.sample.util.DbUtil;
@@ -23,7 +23,7 @@ public class ProfileDAOImpl implements ProfileDAO {
     public int saveProfile(Profile profile) {
         int i = 0;
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             String sql = "INSERT ignore INTO `profiles`.`profile` (`username`, `password`, `nickname`) " +
                     "VALUES (?, ?, ?)"; // 添加ignore出现重复不会抛出异常而是返回0
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -39,10 +39,10 @@ public class ProfileDAOImpl implements ProfileDAO {
     }
 
     @Override
-    public List<Profile> listProfileByNickname(String nickname) {
+    public List<Profile> listByNickname(String nickname) {
         List<Profile> result = new ArrayList<>();
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             String sql = "SELECT  `profile_id`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`" +
                     "FROM `profiles`.`profile`" +
                     "WHERE `nickname`=?";
@@ -62,10 +62,10 @@ public class ProfileDAOImpl implements ProfileDAO {
     }
 
     @Override
-    public Profile getProfileByUsername(String username) {
+    public Profile getByUsername(String username) {
         Profile result = null;
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             String sql = "SELECT  `profile_id`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`" +
                     "FROM `profiles`.`profile`" +
                     "WHERE `username`=?";
@@ -84,10 +84,10 @@ public class ProfileDAOImpl implements ProfileDAO {
     }
 
     @Override
-    public int updateProfileById(Profile profile) {
+    public int updateById(Profile profile) {
         int i = 0;
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             String sql = "UPDATE `profiles`.`profile`" +
                     "SET `nickname`=?,  `gender`=?,  `birthday`=?,  `location`=? " +
                     "WHERE  `profile_id`=?";
@@ -109,7 +109,7 @@ public class ProfileDAOImpl implements ProfileDAO {
     public int updatePassword(String username, String password) {
         int i = 0;
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             String sql = "UPDATE `profiles`.`profile`" +
                     "SET `password`=? " +
                     "WHERE  `username`=?";
@@ -128,7 +128,7 @@ public class ProfileDAOImpl implements ProfileDAO {
     public int updateLastOnline(String username) {
         int i = 0;
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             String sql = "UPDATE `profiles`.`profile`" +
                     "SET `last_online`=CURRENT_TIMESTAMP " +
                     "WHERE  `username`=?";

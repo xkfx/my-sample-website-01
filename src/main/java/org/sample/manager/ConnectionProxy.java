@@ -1,16 +1,17 @@
 package org.sample.manager;
 
-import org.sample.db.LocalConnectionFactory;
+import org.sample.db.ConnectionFactory;
 import org.sample.exception.DaoException;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
-public class LocalConnectionProxy {
-
+/**
+ * 对应线程池版本ConnectionFactory
+ */
+public class ConnectionProxy {
     public static void setAutoCommit(boolean autoCommit) {
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             conn.setAutoCommit(autoCommit);
         } catch (Exception e) {
             throw new DaoException(e);
@@ -19,7 +20,7 @@ public class LocalConnectionProxy {
 
     public static void commit() {
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             conn.commit();
         } catch (Exception e) {
             throw new DaoException(e);
@@ -28,7 +29,7 @@ public class LocalConnectionProxy {
 
     public static void rollback() {
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             conn.rollback();
         } catch (Exception e) {
             throw new DaoException(e);
@@ -37,11 +38,13 @@ public class LocalConnectionProxy {
 
     public static void close() {
         try {
-            Connection conn = LocalConnectionFactory.getConnection();
+            Connection conn = ConnectionFactory.getConnection();
             conn.close();
-            LocalConnectionFactory.removeLocalConnection();
+            ConnectionFactory.removeLocalConnection();
         } catch (Exception e) {
             throw new DaoException(e);
         }
     }
+
+    // TODO 设置隔离级别
 }
