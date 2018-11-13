@@ -12,6 +12,14 @@ public class ConnectionFactory {
         // Exists to defeat instantiation
     }
 
+    static {
+        try {
+            Class.forName("org.gjt.mm.mysql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static final ThreadLocal<Connection> LocalConnectionHolder = new ThreadLocal<>();
 
     public static Connection getConnection() throws SQLException {

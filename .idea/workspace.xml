@@ -7,48 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a1db529-af44-4752-bbb3-64438492b5fb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/service/SampleService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/service/impl/SampleServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/web/SampleController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/web/api.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/HikariCP-3.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/hamcrest-core-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/junit-4.12.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/logback-classic-1.2.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/logback-core-1.2.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.38.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/lib/slf4j-api-1.7.21.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/result.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/result2.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/index.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/dao/ProfileDAO.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/dao/ProfileDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/dao/impl/ProfileDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/dao/impl/ProfileDAOImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/db/ConnectionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/db/ConnectionFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/db/HikariCPDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/db/HikariCPDataSource.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/dto/OPResult.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/dto/OPResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/dto/Validation.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/dto/Validation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/entity/Profile.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/entity/Profile.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/enums/OPEnum.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/enums/OPEnum.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/exception/DaoException.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/exception/DaoException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/exception/OnesProfileException.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/exception/OnesProfileException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/manager/ConnectionProxy.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/manager/ConnectionProxy.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/service/ProfileService.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/service/ProfileService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/service/impl/ProfileServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/service/impl/ProfileServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/util/DbUtil.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/util/DbUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/util/FormatValidator.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/util/FormatValidator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/util/MyClassName.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/util/MyClassName.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/web/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/web/LoginServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/app/web/RegisterServlet.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/web/RegisterServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/mycompany/app/dao/ProfileDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/sample/webapp/dao/ProfileDAOTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/mycompany/app/manager/DaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/sample/webapp/manager/DaoTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/mycompany/app/service/ProfileServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/sample/webapp/service/ProfileServiceTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/mycompany/app/util/FormatValidatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/sample/webapp/util/FormatValidatorTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/profile_save.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile_save.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/login.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/register.html" afterPath="$PROJECT_DIR$/src/main/webapp/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/web_test_01_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/web_test_01_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/sample/webapp/db/ConnectionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/org/sample/webapp/db/ConnectionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.dao.ProfileDAOTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.dao.ProfileDAOTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.manager.DaoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.manager.DaoTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.service.ProfileServiceTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.service.ProfileServiceTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.util.FormatValidatorTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-org.sample.webapp.util.FormatValidatorTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/org.sample.webapp.dao.ProfileDAOTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/org.sample.webapp.dao.ProfileDAOTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/org.sample.webapp.manager.DaoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/org.sample.webapp.manager.DaoTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/org.sample.webapp.service.ProfileServiceTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/org.sample.webapp.service.ProfileServiceTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-test-01.iml" afterPath="$PROJECT_DIR$/web-test-01.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,14 +41,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="DaoTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/sample/webapp/manager/DaoTest.java">
+      <file leaf-file-name="ConnectionFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/sample/webapp/db/ConnectionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="500">
+              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,7 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/sample/service/impl/ProfileNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/sample/web/SampleController.java" />
         <option value="$PROJECT_DIR$/web/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/sample/web/LoginServlet.java" />
@@ -176,9 +144,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/sample/util/MyClassName.java" />
         <option value="$PROJECT_DIR$/src/test/resources/logback-test.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mycompany/app/util/MyClassName.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/sample/webapp/service/impl/SampleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/sample/webapp/manager/DaoTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/sample/webapp/db/ConnectionFactory.java" />
       </list>
     </option>
   </component>
@@ -246,6 +215,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: mysql:mysql-connector-java:5.1.38" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql-connector-java-5.1.38.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-test-01" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: mysql:mysql-connector-java:5.1.38" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql-connector-java-5.1.38.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-test-01" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="web-test-01" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -260,25 +269,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web-test-01" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web-test-01" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -929,7 +920,7 @@
       <workItem from="1542098400575" duration="433000" />
       <workItem from="1542099798016" duration="237000" />
       <workItem from="1542103704879" duration="523000" />
-      <workItem from="1542104249215" duration="1610000" />
+      <workItem from="1542104249215" duration="6561000" />
     </task>
     <servers />
   </component>
@@ -966,7 +957,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="315953000" />
+    <option name="totallyTimeSpent" value="320904000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -994,11 +985,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41979522" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779098" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3064133" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30558723" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2765625" sideWeight="0.49052134" order="0" side_tool="false" content_ui="combo" />
@@ -1010,7 +1002,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779098" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
     </layout>
@@ -1118,13 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/sample/webapp/db/ConnectionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1240,13 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/sample/webapp/dao/ProfileDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2224">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/sample/webapp/service/impl/SampleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -1291,14 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1359,13 +1328,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/sample/webapp/dao/ProfileDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/sample/webapp/manager/DaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        <state relative-caret-position="-392">
+          <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2320">
+          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/sample/webapp/db/ConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
