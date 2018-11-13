@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="org.sample.dto.OnesProfileResult" %>
+<%@ page import="com.mycompany.app.dto.OPResult" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
             background-color:powderblue;
             text-align: center;
         }
-        #register_form {
+        #id-form-register {
             padding: 55px;
         }
     </style>
@@ -23,10 +23,10 @@
 <h1 align="center">Register Page</h1>
 <div id="all">
     <%
-        OnesProfileResult result = (OnesProfileResult)request.getAttribute("result");
+        OPResult result = (OPResult)request.getAttribute("result");
     %>
     <p style="color: red"><%=result.getExtraInfo().getStateInfo()%></p>
-    <form action="register.do" method="post" id="register_form">
+    <form action="register.do" method="post" id="id-form-register">
         用户名：<input type="text" name="username"><br>
         密码: <input type="text" name="password"><br>
         昵称: <input type="text" name="nickname"><br>

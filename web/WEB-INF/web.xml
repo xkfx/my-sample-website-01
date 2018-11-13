@@ -5,7 +5,7 @@
          version="3.1">
     <servlet>
         <servlet-name>Ch3 Beer</servlet-name>
-        <servlet-class>org.sample.web.SampleController</servlet-class>
+        <servlet-class>com.mycompany.app.web.SampleController</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>org.sample.web.RegisterServlet</servlet-class>
+        <servlet-class>com.mycompany.app.web.RegisterServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
