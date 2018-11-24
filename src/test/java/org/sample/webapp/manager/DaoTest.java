@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 public class DaoTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DaoTest.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(DaoTest.class);
 
     private static final String ORIGIN_STRING = "hello";
     private static String RandomString() {

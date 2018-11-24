@@ -1,0 +1,1 @@
+sh /d/apache-tomcat-9.0.8/bin/shutdown.sh

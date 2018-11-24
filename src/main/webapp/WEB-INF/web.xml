@@ -4,16 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <servlet-class>org.sample.webapp.web.SampleController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <url-pattern>/SelectBeer.do</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>org.sample.webapp.web.RegisterServlet</servlet-class>
     </servlet>
