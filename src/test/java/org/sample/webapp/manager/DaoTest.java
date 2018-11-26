@@ -5,8 +5,6 @@ import org.sample.webapp.dao.ProfileDAO;
 import org.sample.webapp.dao.impl.ProfileDAOImpl;
 import org.sample.webapp.entity.Profile;
 import org.sample.webapp.exception.DaoException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,8 +18,6 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertTrue;
 
 public class DaoTest {
-
-    private static final Logger LOG = LoggerFactory.getLogger(DaoTest.class);
 
     private static final String ORIGIN_STRING = "hello";
     private static String RandomString() {

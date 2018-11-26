@@ -3,13 +3,41 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>org.sample.webapp.web.RegisterServlet</servlet-class>
-    </servlet>
+    <context-param>
+        <param-name>log4jContextName</param-name>
+        <param-value>test-log4j2</param-value> <!-- 什么都不设置的话，默认是ServletContext的名字 -->
+    </context-param>
 
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/register.do</url-pattern>
-    </servlet-mapping>
+    <filter>
+        <filter-name>AccessRecorder</filter-name>
+        <filter-class>org.sample.webapp.web.filter.AccessRecorder</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AccessRecorder</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher><!-- 什么都不设置的话，默认就是这个 -->
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>org.sample.webapp.web.filter.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.sample.webapp.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>charset</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
