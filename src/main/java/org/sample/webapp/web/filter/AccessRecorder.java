@@ -30,10 +30,9 @@ public class AccessRecorder implements Filter {
         final String method = httpReq.getMethod();
         final String uri = httpReq.getRequestURI();
         final long start = System.currentTimeMillis();
-        // TODO 异步日志
         chain.doFilter(req, resp);
         final long end = System.currentTimeMillis();
-        LOGGER.debug("{} {} {} {}ms", ipAddress, method, uri, end - start); // 时间，ip地址，做了啥，结果怎么样
+        LOGGER.info("{} - {} {} {}ms", ipAddress, method, uri, end - start); // 时间，ip地址，做了啥，结果怎么样
     }
 
     @Override

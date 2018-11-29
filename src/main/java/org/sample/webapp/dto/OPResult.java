@@ -43,4 +43,13 @@ public class OPResult<T> {
     public void setExtraInfo(OPEnum extraInfo) {
         this.extraInfo = extraInfo;
     }
+
+    @Override
+    public String toString() {
+        return "OPResult{" +
+                "success=" + success +
+                ", data=" + data +
+                ", extraInfo=" + extraInfo +
+                '}';
+    }
 }
