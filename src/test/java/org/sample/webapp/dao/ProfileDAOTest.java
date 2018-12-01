@@ -1,5 +1,7 @@
 package org.sample.webapp.dao;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.sample.webapp.entity.Profile;
 import org.junit.Test;
 import org.sample.webapp.dao.impl.ProfileDAOImpl;
@@ -11,6 +13,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class ProfileDAOTest {
+
+    private static final Logger LOGGER = LogManager.getLogger("org.sample.webapp.util.TestLog4j2");
 
     private static final ProfileDAO PROFILE_DAO = ProfileDAOImpl.INSTANCE;
 
@@ -93,4 +97,17 @@ public class ProfileDAOTest {
         assertEquals(1, i);
     }
 
+    @Test
+    public void testExceptions() {
+        LOGGER.error("hahaha");
+        LOGGER.debug("dasdassd");
+        try {
+            Profile profile = RandomProfile();
+            int i = PROFILE_DAO.saveProfile(profile); // 手动制造一些异常
+            ConnectionProxy.close();
+            // TODO ConnectionProxy.close()放在finally中代码显变得太长，直接放dao层又没法控制事务
+        } catch (Exception e) {
+            LOGGER.error("", e);
+        }
+    }
 }

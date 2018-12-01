@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MyApp" packages="" monitorInterval="1800">
+    <Properties>
+        <property name="basePath">${log4j:configParentLocation}/log4j2Logs</property>
+        <property name="defaultPattern">%d{DEFAULT} %c{1.} [%t] %p %m%n</property>
+    </Properties>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${defaultPattern}"/>
+        </Console>
+
+        <!-- 记录第三方框架/库抛出的异常 -->
+        <RollingRandomAccessFile name="third_error_appender" fileName="${basePath}/third_error.out"
+                                 filePattern="${basePath}/error/third/error_%d{yyyy-MM-dd}_%i.log">
+            <Filters>
+                <!-- 限制日志级别在warn及以上 -->
+                <ThresholdFilter level="warn"/>
+            </Filters>
+            <PatternLayout>
+                <Pattern>${defaultPattern}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <TimeBasedTriggeringPolicy modulate="true"/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <!--<AppenderRef ref="STDOUT"/>-->
+            <AppenderRef ref="third_error_appender"/>
+        </Root>
+    </Loggers>
+</Configuration>

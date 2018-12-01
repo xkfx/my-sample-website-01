@@ -36,11 +36,11 @@ public class ProfileServiceImpl implements ProfileService {
 
         Profile profile = new Profile(username, password, nickname);
         try {
-            LOGGER.info("ProfileService - saveProfile began: {}", profile);
+            LOGGER.info("register - saveProfile began: {}", profile);
             final long start = System.currentTimeMillis();
             int i = profileDAO.saveProfile(profile);
             final long end = System.currentTimeMillis();
-            LOGGER.info("ProfileService - end of saveProfile: number of rows affected={}, {}ms", i, end - start);
+            LOGGER.info("register - end of saveProfile: result={}, {}ms", i, end - start);
             ConnectionProxy.close();
             if (i == 0) {
                 return new OPResult(false, OPEnum.PROFILE_EXISTED);
@@ -48,7 +48,7 @@ public class ProfileServiceImpl implements ProfileService {
                 return new OPResult(true, OPEnum.REGISTER_SUCCESS);
             }
         } catch (Exception e) {
-            LOGGER.error("An error occurred while registering - {}", e.getMessage());
+            LOGGER.error("An error occurred while registering", e);
             return new OPResult(false, OPEnum.INNER_ERROR);
         }
     }
