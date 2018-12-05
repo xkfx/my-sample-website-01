@@ -1,4 +1,4 @@
-package org.sample.webapp.manager;
+package org.sample.webapp.dao;
 
 import org.sample.webapp.exception.DaoException;
 import org.sample.webapp.db.ConnectionFactory;
@@ -6,6 +6,7 @@ import org.sample.webapp.db.ConnectionFactory;
 import java.sql.Connection;
 
 /**
+ * TODO 设计不合理，待修改
  * 对应线程池版本ConnectionFactory，方便在Service层进行事务控制
  */
 public class ConnectionProxy {

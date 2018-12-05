@@ -6,7 +6,6 @@ package org.sample.webapp.enums;
  */
 public enum OPEnum {
 
-    REGISTER_SUCCESS(1, "注册成功"),
     PROFILE_EXISTED(0, "用户名已被注册"),
     CONTINUOUS_UNDERLINE(-1, "用户名含有连续的下划线"),
     ILLEGAL_USERNAME(-2, "无效用户名"),

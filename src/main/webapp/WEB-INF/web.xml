@@ -40,4 +40,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <servlet>
+        <servlet-name>ProfileController</servlet-name>
+        <servlet-class>org.sample.webapp.web.servlet.ProfileController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileController</servlet-name>
+        <url-pattern>/api/v1/profiles</url-pattern>
+    </servlet-mapping>
 </web-app>

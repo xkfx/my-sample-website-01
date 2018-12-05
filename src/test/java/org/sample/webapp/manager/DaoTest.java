@@ -1,6 +1,7 @@
 package org.sample.webapp.manager;
 
 import org.junit.Test;
+import org.sample.webapp.dao.ConnectionProxy;
 import org.sample.webapp.dao.ProfileDAO;
 import org.sample.webapp.dao.impl.ProfileDAOImpl;
 import org.sample.webapp.entity.Profile;

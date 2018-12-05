@@ -5,7 +5,5 @@ import org.sample.webapp.entity.Profile;
 
 public interface ProfileService {
 
-    Profile getByUsername(String username);
-
     OPResult register(String username, String password, String nickname);
 }

@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.sample.webapp.entity.Profile;
 import org.junit.Test;
 import org.sample.webapp.dao.impl.ProfileDAOImpl;
-import org.sample.webapp.manager.ConnectionProxy;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 
 public class ProfileDAOTest {
 
-    private static final Logger LOGGER = LogManager.getLogger("org.sample.webapp.util.TestLog4j2");
+    private static final Logger LOGGER = LogManager.getLogger("org.sample.webapp.util.test.TestLog4j2");
 
     private static final ProfileDAO PROFILE_DAO = ProfileDAOImpl.INSTANCE;
 

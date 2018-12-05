@@ -1,4 +1,4 @@
-package org.sample.webapp.util;
+package org.sample.webapp.util.test;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

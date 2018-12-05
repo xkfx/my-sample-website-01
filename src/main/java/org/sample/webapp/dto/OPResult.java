@@ -1,23 +1,21 @@
 package org.sample.webapp.dto;
 
-import org.sample.webapp.enums.OPEnum;
-
 public class OPResult<T> {
 
     private boolean success;
 
     private T data;
 
-    private OPEnum extraInfo;
+    private String error;
 
     public OPResult(boolean success, T data) {
         this.success = success;
         this.data = data;
     }
 
-    public OPResult(boolean success, OPEnum extraInfo) {
+    public OPResult(boolean success, String error) {
         this.success = success;
-        this.extraInfo = extraInfo;
+        this.error = error;
     }
 
     public boolean isSuccess() {
@@ -36,20 +34,20 @@ public class OPResult<T> {
         this.data = data;
     }
 
-    public OPEnum getExtraInfo() {
-        return extraInfo;
+    public String getError() {
+        return error;
     }
 
-    public void setExtraInfo(OPEnum extraInfo) {
-        this.extraInfo = extraInfo;
+    public void setError(String error) {
+        this.error = error;
     }
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "OPResult{" +
                 "success=" + success +
                 ", data=" + data +
-                ", extraInfo=" + extraInfo +
+                ", error=" + error +
                 '}';
     }
 }

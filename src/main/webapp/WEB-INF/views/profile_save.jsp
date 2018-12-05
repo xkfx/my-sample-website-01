@@ -25,7 +25,7 @@
     <%
         OPResult result = (OPResult)request.getAttribute("result");
     %>
-    <p style="color: red"><%=result.getExtraInfo().getStateInfo()%></p>
+    <p style="color: red"><%=result.getError().getStateInfo()%></p>
     <form action="register.do" method="post" id="id-form-register">
         用户名：<input type="text" name="username"><br>
         密码: <input type="text" name="password"><br>

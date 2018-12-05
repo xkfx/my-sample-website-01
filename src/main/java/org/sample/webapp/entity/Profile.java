@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class Profile {
 
-    private Long profileId;
+    private Long id;
     private String username;
     private String password;
     private String nickname;
@@ -23,12 +23,12 @@ public class Profile {
         this.nickname = nickname;
     }
 
-    public Long getProfileId() {
-        return profileId;
+    public Long getId() {
+        return id;
     }
 
-    public void setProfileId(Long profileId) {
-        this.profileId = profileId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -98,7 +98,7 @@ public class Profile {
     @Override
     public String toString() {
         return "Profile{" +
-                "profileId=" + profileId +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", nickname='" + nickname + '\'' +

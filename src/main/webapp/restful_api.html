@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let log = console.log.bind(console);
+			let e = sel => document.querySelector(sel);
+            fetch("/test/profiles", {method: "POST" }).then(resp => {
+            	console.log(resp);
+            }).catch(reason => console.log(reason));
+
+		</script>
+	</body>
+</html>

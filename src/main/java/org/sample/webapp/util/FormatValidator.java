@@ -18,7 +18,7 @@ public class FormatValidator {
         return CONTINUOUS_UNDERLINE.matcher(x).matches();
     }
 
-    public static boolean checkNotNull(final String x) {
+    public static boolean checkNotNull(final java.lang.String x) {
         return x != null && !x.equals("");
     }
 
@@ -31,14 +31,14 @@ public class FormatValidator {
     public static Validation validateUsername(final String username) {
         if (checkNotNull(username)) {
             if (!USERNAME.matcher(username).matches()) {
-                return new Validation(false, OPEnum.ILLEGAL_USERNAME);
+                return new Validation(false, OPEnum.ILLEGAL_USERNAME.getStateInfo());
             }
             if (containContinuousUnderline(username)) {
-                return new Validation(false, OPEnum.CONTINUOUS_UNDERLINE);
+                return new Validation(false, OPEnum.CONTINUOUS_UNDERLINE.getStateInfo());
             }
             return new Validation(true);
         } else {
-            return new Validation(false, OPEnum.NULL_USERNAME);
+            return new Validation(false, OPEnum.NULL_USERNAME.getStateInfo());
         }
     }
 
@@ -52,9 +52,9 @@ public class FormatValidator {
             if (PASSWORD.matcher(password).matches()) {
                 return new Validation(true);
             }
-            return new Validation(false, OPEnum.ILLEGAL_PASSWORD);
+            return new Validation(false, OPEnum.ILLEGAL_PASSWORD.getStateInfo());
         } else {
-            return new Validation(false, OPEnum.NULL_PASSWORD);
+            return new Validation(false, OPEnum.NULL_PASSWORD.getStateInfo());
         }
     }
 
@@ -62,7 +62,7 @@ public class FormatValidator {
         if (checkNotNull(nickname)) {
             return new Validation(true);
         } else {
-            return new Validation(false, OPEnum.NULL_NICKNAME);
+            return new Validation(false, OPEnum.NULL_NICKNAME.getStateInfo());
         }
     }
 
@@ -73,7 +73,7 @@ public class FormatValidator {
      * @param nickname
      * @return
      */
-    public static Validation validateRegistration(final String username, final String password, final String nickname) {
+    public static Validation validateRegistration(final String username, final java.lang.String password, final java.lang.String nickname) {
         // 校验用户名
         Validation result = validateUsername(username);
         if (!result.isSuccess()) return result;

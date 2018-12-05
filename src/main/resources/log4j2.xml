@@ -8,14 +8,14 @@
     <Appenders>
         <!-- 记录web层发起的普通日志请求 -->
         <RollingRandomAccessFile name="web_appender" fileName="${basePath}/web.out"
-                                 filePattern="${log4j:configParentLocation}/log4j2Logs/web/trace_%d{yyyy-MM-dd}_%i.log">
+                                 filePattern="${log4j:configParentLocation}/web/trace_%d{yyyy-MM-dd}_%i.log">
             <PatternLayout>
                 <Pattern>${defaultPattern}</Pattern>
             </PatternLayout>
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <TimeBasedTriggeringPolicy modulate="true"/>
-                <SizeBasedTriggeringPolicy size="250 MB"/> <!-- 防止无限写 -->
+                <SizeBasedTriggeringPolicy size="25 MB"/> <!-- 防止无限写 -->
             </Policies>
             <DefaultRolloverStrategy max="5"/>
         </RollingRandomAccessFile>
@@ -29,7 +29,7 @@
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <TimeBasedTriggeringPolicy modulate="true"/>
-                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <SizeBasedTriggeringPolicy size="25 MB"/>
             </Policies>
             <DefaultRolloverStrategy max="5"/>
         </RollingRandomAccessFile>
@@ -47,14 +47,14 @@
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <TimeBasedTriggeringPolicy modulate="true"/>
-                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <SizeBasedTriggeringPolicy size="25 MB"/>
             </Policies>
             <DefaultRolloverStrategy max="5"/>
         </RollingRandomAccessFile>
 
         <!-- 记录第三方框架/库抛出的异常 -->
         <RollingRandomAccessFile name="third_error_appender" fileName="${basePath}/third_error.out"
-                                 filePattern="${basePath}/error/third/error_%d{yyyy-MM-dd}_%i.log">
+                                 filePattern="${basePath}/third/error_%d{yyyy-MM-dd}_%i.log">
             <Filters>
                 <!-- 限制日志级别在warn及以上 -->
                 <ThresholdFilter level="warn"/>
@@ -65,7 +65,7 @@
             <Policies>
                 <OnStartupTriggeringPolicy />
                 <TimeBasedTriggeringPolicy modulate="true"/>
-                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <SizeBasedTriggeringPolicy size="25 MB"/>
             </Policies>
             <DefaultRolloverStrategy max="5"/>
         </RollingRandomAccessFile>
@@ -73,7 +73,8 @@
 
 
     <Loggers>
-        <!-- 该设定适用于第三方框架/库的logger，例如hikari -->
+        <!-- 该设定适用于第三方框架/库的logger，例如hikari，
+            其它不兼容的日志会被输出到catalina.out -->
         <Root level="warn">
             <AppenderRef ref="third_error_appender"/>
         </Root>

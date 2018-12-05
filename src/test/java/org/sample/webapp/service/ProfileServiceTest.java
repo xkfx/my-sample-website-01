@@ -11,8 +11,5 @@ public class ProfileServiceTest {
     @Test
     public void register() {
         OPResult result = profileService.register("a333", "eqw3212", "233");
-        OPResult result2 = profileService.register("a333", "eqw3212", "233");
-        OPResult result3 = profileService.register("a333", "eqw3212", "233");
-        System.out.println(result.getExtraInfo().getState());
     }
 }

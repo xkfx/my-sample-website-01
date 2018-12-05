@@ -1,5 +1,5 @@
 -- 登陆：getProfileByUsername
-SELECT  `profileId`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`
+SELECT  `id`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`
 FROM `profiles`.`profile`
 WHERE `username`='123';
 
@@ -8,7 +8,7 @@ INSERT ignore INTO `profiles`.`profile` (`username`, `password`, `nickname`)
 VALUES ('1234', '123', '123');
 
 -- 查看某人的信息：listByNickname
-SELECT  `profileId`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`
+SELECT  `id`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`
 FROM `profiles`.`profile`
 WHERE `nickname`='123';
 

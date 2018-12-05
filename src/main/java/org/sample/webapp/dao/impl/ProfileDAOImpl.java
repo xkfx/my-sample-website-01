@@ -96,7 +96,7 @@ public class ProfileDAOImpl implements ProfileDAO {
                 ps.setString(2, profile.getGender() != null ? String.valueOf(profile.getGender()) : null);
                 ps.setTimestamp(3, profile.getBirthday());
                 ps.setString(4, profile.getLocation());
-                ps.setLong(5, profile.getProfileId());
+                ps.setLong(5, profile.getId());
                 i = ps.executeUpdate();
             }
         } catch (SQLException e) {

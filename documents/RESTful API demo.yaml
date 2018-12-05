@@ -1,0 +1,111 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: PROFILES
+  description: this is a simple api.
+  termsOfService: www.sample.com/terms-of-use
+  contact:
+    name: xkfx
+    url: 'https://www.cnblogs.com/xkxf/'
+    email: wyzxkfx@gmail.com
+  license:
+    name: DIY License
+    url: 'https://www.sample.com/license'
+servers:
+  - url: 'http://localhost:8080/test/api/v1'
+    description: Dev server
+  - url: 'https://www.sample.com/api/v1'
+    description: Prod server
+paths:
+  /profiles:
+    post:
+      description: Creates a new profile in data base
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile-register'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Profile-register'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Profile-register'
+      responses:
+        '200':
+          description: Successful created a new profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+
+  /profiles/{nickname}:
+    get:
+      description: Obtain infomation about profiles from the database
+      parameters:
+        - in: path
+          name: nickname
+          required: true
+          description: The nickname of the profile
+          schema:
+            type: string
+            example: zhang
+      responses:
+        '200':
+          description: Successful pull of profile info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profiles'
+components:
+  schemas:
+    Profiles:
+      description: Array of profile info
+      type: array
+      items:
+        $ref: '#/components/schemas/Profile'
+    Profile:
+      description: Model containing profile info
+      properties:
+        id:
+          type: integer
+          example: 10001
+        username:
+          type: string
+          example: admin
+        password:
+          type: string
+          example: null
+        nickname:
+          type: string
+          example: xkfx
+        last_online:
+          type: string
+          example: 1544002331000
+        gender: # 应该设计成integer类型
+          type: string
+          example: null
+        birthday:
+          type: string
+          example: 1544002331000
+        location:
+          type: string
+          example: null
+        joined:
+          type: string
+          example: 1544002331000
+
+    Profile-register:
+      description: Model containing profile-register info
+      properties:
+        username:
+          type: string
+          example: admin
+        nickname:
+          type: string
+          example: xkfx
+        password:
+          type: string
+          example: abc12345
+

@@ -1,18 +1,16 @@
 package org.sample.webapp.dto;
 
-import org.sample.webapp.enums.OPEnum;
-
 public class Validation {
 
     private boolean success;
 
-    private OPEnum error;
+    private String error;
 
     public Validation(boolean success) {
         this.success = success;
     }
 
-    public Validation(boolean success, OPEnum error) {
+    public Validation(boolean success, String error) {
         this.success = success;
         this.error = error;
     }
@@ -25,11 +23,11 @@ public class Validation {
         this.success = success;
     }
 
-    public OPEnum getError() {
+    public String getError() {
         return error;
     }
 
-    public void setError(OPEnum error) {
+    public void setError(String error) {
         this.error = error;
     }
 }

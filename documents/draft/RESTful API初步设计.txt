@@ -1,0 +1,23 @@
+注册模块：
+POST api/v1/profiles
+Accept: application/json
+应该返回的HTTP
+成功状态码- 201
+{
+返回新生成的资源对象
+or
+"current_user_url": "https://api.github.com/user"
+ "current_profile_html_url": "https://github.com/settings/connections/applications{/client_id}"
+}
+失败状态码 - 401或者422（..）或者500（内部错误）
+{
+"error" : "reason"（或者message？）
+ "documentation_url": "https://developer.github.com/v3"
+}
+参照：
+{
+  "error": "Invalid payoad.",
+  "detail": {
+     "surname": "This field is required."
+  }
+}
