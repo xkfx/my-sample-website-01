@@ -1,7 +1,7 @@
 package org.sample.webapp.util;
 
 import org.sample.webapp.dto.Validation;
-import org.sample.webapp.enums.OPEnum;
+import org.sample.webapp.enums.ServiceEnum;
 
 import java.util.regex.Pattern;
 
@@ -31,14 +31,14 @@ public class FormatValidator {
     public static Validation validateUsername(final String username) {
         if (checkNotNull(username)) {
             if (!USERNAME.matcher(username).matches()) {
-                return new Validation(false, OPEnum.ILLEGAL_USERNAME.getStateInfo());
+                return new Validation(false, ServiceEnum.ILLEGAL_USERNAME.getStateInfo());
             }
             if (containContinuousUnderline(username)) {
-                return new Validation(false, OPEnum.CONTINUOUS_UNDERLINE.getStateInfo());
+                return new Validation(false, ServiceEnum.CONTINUOUS_UNDERLINE.getStateInfo());
             }
             return new Validation(true);
         } else {
-            return new Validation(false, OPEnum.NULL_USERNAME.getStateInfo());
+            return new Validation(false, ServiceEnum.NULL_USERNAME.getStateInfo());
         }
     }
 
@@ -52,9 +52,9 @@ public class FormatValidator {
             if (PASSWORD.matcher(password).matches()) {
                 return new Validation(true);
             }
-            return new Validation(false, OPEnum.ILLEGAL_PASSWORD.getStateInfo());
+            return new Validation(false, ServiceEnum.ILLEGAL_PASSWORD.getStateInfo());
         } else {
-            return new Validation(false, OPEnum.NULL_PASSWORD.getStateInfo());
+            return new Validation(false, ServiceEnum.NULL_PASSWORD.getStateInfo());
         }
     }
 
@@ -62,7 +62,7 @@ public class FormatValidator {
         if (checkNotNull(nickname)) {
             return new Validation(true);
         } else {
-            return new Validation(false, OPEnum.NULL_NICKNAME.getStateInfo());
+            return new Validation(false, ServiceEnum.NULL_NICKNAME.getStateInfo());
         }
     }
 

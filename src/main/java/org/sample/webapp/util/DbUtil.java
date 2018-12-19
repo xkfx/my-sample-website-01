@@ -11,7 +11,7 @@ public class DbUtil {
         Profile profile = new Profile();
         profile.setBirthday(rs.getTimestamp("birthday"));
         profile.setJoined(rs.getTimestamp("joined"));
-        profile.setLast_online(rs.getTimestamp("last_online"));
+        profile.setLastOnline(rs.getTimestamp("last_online"));
         profile.setLocation(rs.getString("location"));
         profile.setNickname(rs.getString("nickname"));
         profile.setPassword(rs.getString("password"));

@@ -31,8 +31,7 @@
 
     <Loggers>
         <Root level="debug">
-            <!--<AppenderRef ref="STDOUT"/>-->
-            <AppenderRef ref="third_error_appender"/>
+            <AppenderRef ref="STDOUT"/>
         </Root>
     </Loggers>
 </Configuration>

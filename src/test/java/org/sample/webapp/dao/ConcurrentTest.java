@@ -1,8 +1,7 @@
-package org.sample.webapp.manager;
+package org.sample.webapp.dao;
 
 import org.junit.Test;
-import org.sample.webapp.dao.ConnectionProxy;
-import org.sample.webapp.dao.ProfileDAO;
+import org.sample.webapp.db.connmanager.ConnectionProxy;
 import org.sample.webapp.dao.impl.ProfileDAOImpl;
 import org.sample.webapp.entity.Profile;
 import org.sample.webapp.exception.DaoException;
@@ -17,19 +16,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertTrue;
+import static org.sample.webapp.dao.ProfileDAOTest.RandomProfile;
 
-public class DaoTest {
+public class ConcurrentTest {
 
-    private static final String ORIGIN_STRING = "hello";
-    private static String RandomString() {
-        return Math.random() + ORIGIN_STRING + Math.random();
-    }
-    private static Profile RandomProfile() {
-        Profile profile = new Profile(RandomString(), ORIGIN_STRING, RandomString());
-        return profile;
-    }
-
-    private static final ProfileDAO PROFILE_DAO = ProfileDAOImpl.INSTANCE;
+    private final ProfileDAO profileDAO = ProfileDAOImpl.INSTANCE;
 
     private class Worker implements Runnable {
         private final Profile profile = RandomProfile();
@@ -39,7 +30,7 @@ public class DaoTest {
             // LOG.info(Thread.currentThread().getName() + " has started his work");
             try {
                 // ConnectionProxy.setAutoCommit(false);
-                PROFILE_DAO.saveProfile(profile);
+                profileDAO.saveProfile(profile);
                 // ConnectionProxy.commit();
             } catch (DaoException e) {
                 e.printStackTrace();
@@ -57,10 +48,10 @@ public class DaoTest {
     /**
      * numTasks指并发线程数。
      * -- 不用连接池：
-     * numTasks<=100正常运行，完成100个任务耗时大概是550ms~600ms
+     * numTasks<=100正常运行
      * numTasks>100报错“too many connections”，偶尔不报错，这是来自mysql数据库本身的限制
      * -- 采用连接池
-     * numTasks>10000仍正常运行，完成10000个任务耗时大概是26s（池大小是10）
+     * numTasks>10000仍正常运行（池大小是10）
      */
     private static final int NUM_TASKS = 2000;
 

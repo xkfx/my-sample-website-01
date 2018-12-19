@@ -1,7 +1,7 @@
-package org.sample.webapp.dao;
+package org.sample.webapp.db.connmanager;
 
 import org.sample.webapp.exception.DaoException;
-import org.sample.webapp.db.ConnectionFactory;
+import org.sample.webapp.db.connmanager.ConnectionFactory;
 
 import java.sql.Connection;
 

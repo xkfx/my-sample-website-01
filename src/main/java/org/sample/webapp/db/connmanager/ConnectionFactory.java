@@ -1,4 +1,6 @@
-package org.sample.webapp.db;
+package org.sample.webapp.db.connmanager;
+
+import org.sample.webapp.db.datasource.HikariCPDataSource;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -16,7 +18,7 @@ public class ConnectionFactory {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // catalina.out
         }
     }
 

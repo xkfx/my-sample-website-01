@@ -4,11 +4,11 @@ import java.sql.Timestamp;
 
 public class Profile {
 
-    private Long id;
+    private long id;
     private String username;
     private String password;
     private String nickname;
-    private Timestamp last_online;
+    private Timestamp lastOnline;
     private Character gender;
     private Timestamp birthday;
     private String location;
@@ -23,11 +23,11 @@ public class Profile {
         this.nickname = nickname;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,12 +55,12 @@ public class Profile {
         this.nickname = nickname;
     }
 
-    public Timestamp getLast_online() {
-        return last_online;
+    public Timestamp getLastOnline() {
+        return lastOnline;
     }
 
-    public void setLast_online(Timestamp last_online) {
-        this.last_online = last_online;
+    public void setLastOnline(Timestamp lastOnline) {
+        this.lastOnline = lastOnline;
     }
 
     public Character getGender() {
@@ -102,7 +102,7 @@ public class Profile {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", nickname='" + nickname + '\'' +
-                ", last_online=" + last_online +
+                ", lastOnline=" + lastOnline +
                 ", gender=" + gender +
                 ", birthday=" + birthday +
                 ", location='" + location + '\'' +

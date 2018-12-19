@@ -4,7 +4,7 @@ package org.sample.webapp.enums;
  * 保存一些常量字符串与其状态码
  * 凡是命名带有OP的类都是和业务强相关的
  */
-public enum OPEnum {
+public enum ServiceEnum {
 
     PROFILE_EXISTED(0, "用户名已被注册"),
     CONTINUOUS_UNDERLINE(-1, "用户名含有连续的下划线"),
@@ -19,7 +19,7 @@ public enum OPEnum {
 
     private String stateInfo;
 
-    OPEnum(int state, String stateInfo) {
+    ServiceEnum(int state, String stateInfo) {
         this.state = state;
         this.stateInfo = stateInfo;
     }
@@ -32,8 +32,8 @@ public enum OPEnum {
         return stateInfo;
     }
 
-    public static OPEnum stateOf(int index) {
-        for (OPEnum x : OPEnum.values()) {
+    public static ServiceEnum stateOf(int index) {
+        for (ServiceEnum x : ServiceEnum.values()) {
             if (x.getState() == index) {
                 return x;
             }

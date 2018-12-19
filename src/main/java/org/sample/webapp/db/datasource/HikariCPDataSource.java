@@ -1,8 +1,9 @@
-package org.sample.webapp.db;
+package org.sample.webapp.db.datasource;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -13,5 +14,9 @@ public class HikariCPDataSource {
 
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
+    }
+
+    public static DataSource getDs() {
+        return ds;
     }
 }

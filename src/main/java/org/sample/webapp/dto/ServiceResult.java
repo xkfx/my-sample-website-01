@@ -1,6 +1,6 @@
 package org.sample.webapp.dto;
 
-public class OPResult<T> {
+public class ServiceResult<T> {
 
     private boolean success;
 
@@ -8,12 +8,12 @@ public class OPResult<T> {
 
     private String error;
 
-    public OPResult(boolean success, T data) {
+    public ServiceResult(boolean success, T data) {
         this.success = success;
         this.data = data;
     }
 
-    public OPResult(boolean success, String error) {
+    public ServiceResult(boolean success, String error) {
         this.success = success;
         this.error = error;
     }
@@ -22,29 +22,17 @@ public class OPResult<T> {
         return success;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
     public T getData() {
         return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 
     public String getError() {
         return error;
     }
 
-    public void setError(String error) {
-        this.error = error;
-    }
-
     @Override
     public java.lang.String toString() {
-        return "OPResult{" +
+        return "ServiceResult{" +
                 "success=" + success +
                 ", data=" + data +
                 ", error=" + error +

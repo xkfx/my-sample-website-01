@@ -5,7 +5,7 @@ CREATE TABLE `profile` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `nickname` varchar(50) NOT NULL,
-  `last_online` timestamp NULL DEFAULT NULL,
+  `lastOnline` timestamp NULL DEFAULT NULL,
   `gender` char(1) DEFAULT NULL,
   `birthday` timestamp NULL DEFAULT NULL,
   `location` varchar(50) DEFAULT NULL,

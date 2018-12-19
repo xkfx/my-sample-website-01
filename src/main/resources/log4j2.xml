@@ -8,7 +8,7 @@
     <Appenders>
         <!-- 记录web层发起的普通日志请求 -->
         <RollingRandomAccessFile name="web_appender" fileName="${basePath}/web.out"
-                                 filePattern="${log4j:configParentLocation}/web/trace_%d{yyyy-MM-dd}_%i.log">
+                                 filePattern="${basePath}/web/trace_%d{yyyy-MM-dd}_%i.log">
             <PatternLayout>
                 <Pattern>${defaultPattern}</Pattern>
             </PatternLayout>

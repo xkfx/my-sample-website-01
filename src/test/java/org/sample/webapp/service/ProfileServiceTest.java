@@ -1,6 +1,6 @@
 package org.sample.webapp.service;
 
-import org.sample.webapp.dto.OPResult;
+import org.sample.webapp.dto.ServiceResult;
 import org.sample.webapp.service.impl.ProfileServiceImpl;
 import org.junit.Test;
 
@@ -10,6 +10,6 @@ public class ProfileServiceTest {
 
     @Test
     public void register() {
-        OPResult result = profileService.register("a333", "eqw3212", "233");
+        ServiceResult result = profileService.register("a333", "eqw3212", "233");
     }
 }

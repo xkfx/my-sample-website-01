@@ -80,7 +80,7 @@ components:
         nickname:
           type: string
           example: xkfx
-        last_online:
+        lastOnline:
           type: string
           example: 1544002331000
         gender: # 应该设计成integer类型

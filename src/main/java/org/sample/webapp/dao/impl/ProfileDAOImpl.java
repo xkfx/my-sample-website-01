@@ -1,144 +1,69 @@
 package org.sample.webapp.dao.impl;
 
 import org.sample.webapp.dao.ProfileDAO;
-import org.sample.webapp.db.ConnectionFactory;
+import org.sample.webapp.db.connmanager.ConnectionFactory;
+import org.sample.webapp.db.queryrunner.QueryRunnerProxy;
+import org.sample.webapp.db.queryrunner.RsHandlers;
 import org.sample.webapp.entity.Profile;
 import org.sample.webapp.exception.DaoException;
-import org.sample.webapp.util.DbUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileDAOImpl implements ProfileDAO {
+/**
+ * 该类方法统一抛出DaoException
+ */
+public enum ProfileDAOImpl implements ProfileDAO {
 
-    public static final ProfileDAO INSTANCE = new ProfileDAOImpl();
-
-    private ProfileDAOImpl() {}
+    INSTANCE;
 
     @Override
     public int saveProfile(Profile profile) {
-        int i = 0;
-        try {
-            Connection conn = ConnectionFactory.getConnection();
-            String sql = "INSERT ignore INTO `profiles`.`profile` (`username`, `password`, `nickname`) " +
-                    "VALUES (?, ?, ?)"; // 添加ignore出现重复不会抛出异常而是返回0
-            try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, profile.getUsername());
-                ps.setString(2, profile.getPassword());
-                ps.setString(3, profile.getNickname());
-                i = ps.executeUpdate();
-            }
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-        return i;
+        final String sql = "INSERT ignore INTO profile (username, password, nickname) " +
+                "VALUES (?, ?, ?)"; // 添加ignore出现重复不会抛出异常而是返回0
+        return QueryRunnerProxy.update(sql, profile.getUsername(), profile.getPassword(), profile.getNickname());
     }
 
     @Override
     public List<Profile> listByNickname(String nickname) {
-        List<Profile> result = new ArrayList<>();
-        try {
-            Connection conn = ConnectionFactory.getConnection();
-            String sql = "SELECT  `profile_id`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`" +
-                    "FROM `profiles`.`profile`" +
-                    "WHERE `nickname`=?";
-            try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, nickname);
-                try (ResultSet rs = ps.executeQuery()) {
-                    while (rs.next()) {
-                        Profile profile = DbUtil.extractProfileFromResultSet(rs);
-                        result.add(profile);
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-        return result;
+        final String sql = "SELECT  profile_id AS id,  username,  password,  nickname, last_online AS lastOnline, gender, birthday, location, joined " +
+                "FROM profile " +
+                "WHERE nickname=?";
+        return QueryRunnerProxy.query(sql, RsHandlers.PROFILE_LIST, nickname);
     }
 
     @Override
     public Profile getByUsername(String username) {
-        Profile result = null;
-        try {
-            Connection conn = ConnectionFactory.getConnection();
-            String sql = "SELECT  `profile_id`,  `username`,  `password`,  `nickname`,  `last_online`,  `gender`,  `birthday`,  `location`,  `joined`" +
-                    "FROM `profiles`.`profile`" +
-                    "WHERE `username`=?";
-            try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, username);
-                try (ResultSet rs = ps.executeQuery()) {
-                    if (rs.next()) {
-                        result = DbUtil.extractProfileFromResultSet(rs);
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-        return result;
+        final String sql = "SELECT  profile_id AS id,  username,  password,  nickname, last_online AS lastOnline, gender, birthday, location, joined " +
+                "FROM profile " +
+                "WHERE username=?"; // TODO 该字符串会反复创建吗？
+        return QueryRunnerProxy.query(sql, RsHandlers.PROFILE, username);
     }
 
     @Override
     public int updateById(Profile profile) {
-        int i = 0;
-        try {
-            Connection conn = ConnectionFactory.getConnection();
-            String sql = "UPDATE `profiles`.`profile`" +
-                    "SET `nickname`=?,  `gender`=?,  `birthday`=?,  `location`=? " +
-                    "WHERE  `profile_id`=?";
-            try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, profile.getNickname());
-                ps.setString(2, profile.getGender() != null ? String.valueOf(profile.getGender()) : null);
-                ps.setTimestamp(3, profile.getBirthday());
-                ps.setString(4, profile.getLocation());
-                ps.setLong(5, profile.getId());
-                i = ps.executeUpdate();
-            }
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-        return i;
+        final String sql = "UPDATE profile " +
+                "SET nickname=?, gender=?, birthday=?, location=? " +
+                "WHERE profile_id=?";
+        return QueryRunnerProxy.update(sql, profile.getNickname(), profile.getGender() != null ? String.valueOf(profile.getGender()) : null,
+                profile.getBirthday(), profile.getLocation(), profile.getId());
     }
 
     @Override
     public int updatePassword(String username, String password) {
-        int i = 0;
-        try {
-            Connection conn = ConnectionFactory.getConnection();
-            String sql = "UPDATE `profiles`.`profile`" +
-                    "SET `password`=? " +
-                    "WHERE  `username`=?";
-            try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, password);
-                ps.setString(2, username);
-                i = ps.executeUpdate();
-            }
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-        return i;
+        final String sql = "UPDATE profile " +
+                "SET password=? " +
+                "WHERE username=?";
+        return QueryRunnerProxy.update(sql, password, username);
     }
 
     @Override
     public int updateLastOnline(String username) {
-        int i = 0;
-        try {
-            Connection conn = ConnectionFactory.getConnection();
-            String sql = "UPDATE `profiles`.`profile`" +
-                    "SET `last_online`=CURRENT_TIMESTAMP " +
-                    "WHERE  `username`=?";
-            try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, username);
-                i = ps.executeUpdate();
-            }
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-        return i;
+        final String sql = "UPDATE profile " +
+                "SET last_online=CURRENT_TIMESTAMP " +
+                "WHERE username=?";
+        return QueryRunnerProxy.update(sql, username);
     }
 }

@@ -1,9 +1,8 @@
 package org.sample.webapp.service;
 
-import org.sample.webapp.dto.OPResult;
-import org.sample.webapp.entity.Profile;
+import org.sample.webapp.dto.ServiceResult;
 
 public interface ProfileService {
 
-    OPResult register(String username, String password, String nickname);
+    ServiceResult register(String username, String password, String nickname);
 }

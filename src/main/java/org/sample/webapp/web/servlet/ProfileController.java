@@ -3,7 +3,7 @@ package org.sample.webapp.web.servlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.sample.webapp.dto.OPResult;
+import org.sample.webapp.dto.ServiceResult;
 import org.sample.webapp.service.ProfileService;
 import org.sample.webapp.service.impl.ProfileServiceImpl;
 import org.sample.webapp.util.IpAddressUtil;
@@ -30,13 +30,13 @@ public class ProfileController extends HttpServlet {
 
         // 处理
         LOGGER.info("{} - registration began: registration{username={}, password={}, nickname={}}", ip, username, password, nickname);
-        OPResult opResult = profileService.register(username, password, nickname);
-        LOGGER.info("{} - end of registration: {}", ip, opResult);
+        ServiceResult serviceResult = profileService.register(username, password, nickname);
+        LOGGER.info("{} - end of registration: {}", ip, serviceResult);
         Object result;
-        if (opResult.isSuccess()) {
-            result = opResult.getData();
+        if (serviceResult.isSuccess()) {
+            result = serviceResult.getData();
         } else {
-            result = opResult;
+            result = serviceResult;
         }
 
         // 返回结果
